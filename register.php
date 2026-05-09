@@ -34,9 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="Js/script.js"></script>
+    <link rel="stylesheet" href="Style/style.css">
+    <title>Register</title>
 </head>
 <body>
+    <div class="container">
     <?php if (isset($error)) echo "<p style='color:red'>$error</p>"; ?>
     <?php if (isset($success)) echo "<p style='color:green'>$success</p>"; ?>
 
@@ -48,7 +52,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="email" name="email" required><br><br>
 
         <label>Password:</label>
-        <input type="password" name="password" required><br><br>
+        <div style="position:relative">
+        <input type="password" name="password" id="password" required>
+        <span onclick="togglePassword()" style="position:absolute; right:14px; top:50%; transform:translateY(-50%); cursor:pointer; color:#9c8878;">
+            <i class="fa-regular fa-eye"></i>
+        </span>
+        </div>
 
         <label>Konfirmasi Password:</label>
         <input type="password" name="konfirmasi_password" required><br><br>
@@ -58,5 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <br>
         <a href="login.php">Sudah punya akun? Login</a>
     </form>
+    </div>
 </body>
 </html>
