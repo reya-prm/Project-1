@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <?php if (isset($error)) echo "<p style='color:red'>$error</p>"; ?>
     <?php if (isset($success)) echo "<p style='color:green'>$success</p>"; ?>
-    
+
     <form method="POST">
         <label>Username:</label>
         <input type="text" name="username" required><br><br>
@@ -54,6 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="password" name="konfirmasi_password" required><br><br>
 
         <button type="submit">Register</button>
+        <br>
+        <br>
+        <a href="login.php">Sudah punya akun? Login</a>
     </form>
 </body>
 </html>
